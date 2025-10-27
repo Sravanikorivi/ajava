@@ -1,5 +1,0 @@
-create table users(rollno int,name varchar(20),age int);
-insert into users values(1,'sravani',21);
-insert into users values(2,'manju',19);
-insert into users values(3,'prudhvi',21);
-
