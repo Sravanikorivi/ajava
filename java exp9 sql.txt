@@ -1,0 +1,5 @@
+create table users(id int,name varchar(20),mobileno int);
+insert into users values(1258,'sravani',8341715211);
+insert into users values(1267,'manju',2534890487);
+insert into users values(1205,'prudhvi',3643892904);
+
