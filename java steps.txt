@@ -1,0 +1,52 @@
+steps
+======
+open the eclipse id 
+click on file->new
+java project
+project name 
+click on javaSE 1.8
+clock on finish
+right click on src->new->package
+folder name ,finish
+right click on folder
+package name ->new ->class
+class name 
+click on psvm
+adding of jar
+-------------
+right click on project name ->build path
+->configuration build path->libraries->add external jar's
+click on downloads->double click on jarfile(ojdbc 8)
+click on apply and close then we get referenced libraries
+click on run->run as->java application
+sql command line
+---------------------
+connect system /tec
+select *from student
+
+exp-14
+-----
+steps
+------
+open spring tool(green)
+file->new->sprint starter project
+project name :SPRINGMVC
+type : Maven 		packaging:jar
+java version : 17		language:java
+group : it			package : it
+click on next
+web ->add spring web
+click on finish
+right click on IT
+create a newclass
+class name : studentmodel
+click on finish
+right click on IT
+create a newclass
+class name : studentcontroller
+click on finish
+click on src/main/resource
+double click on application.properties
+
+
+
