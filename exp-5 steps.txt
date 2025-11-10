@@ -1,0 +1,16 @@
+file->new
+dynamic web project
+project name :it servlet
+target runtime : apache tomcat v9.0
+dynamic web module version :3.0
+click on next
+click on next
+select the checkbox on Generate web.xml
+deployment descriptor
+clock on finish
+right click on src/main/jar
+create a package
+package name :it a
+right click on package
+create a servlet
+servlet name :Ita58
