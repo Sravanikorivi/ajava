@@ -1,0 +1,16 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
+<head>
+<title>JSTL Function Tag Demo</title>
+</head>
+<body>
+<c:set var='message' value='a Hello JSTL Functions' />
+<p>${message}</p>
+<p>${fn:length(message)}</p>
+<p>${fn:toUpperCase(message)}</p>
+<p>${fn:toLowerCase(message)}</p>
+<p>${fn:contains(message,'rama')}</p>
+<p>${fn:indexOf(message,'H')}</p>
+</body>
+</html>
