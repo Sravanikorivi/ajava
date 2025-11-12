@@ -1,0 +1,406 @@
+Experint – 1
+============
+Package harini;
+Import java.sql.*;
+Public class Jdbc
+Public static void main(String [] args) throws Exception
+{
+Class.forName(“Oracle.jdbc.driver.OracleDriver”);
+Connection con=DriverManager.getConnection(“jdbc:oracle:thin:@localhost:1521:XE”,”system”,”tec);
+Statement stmt=con.createStatement();
+Stmt.executeUpdate(“Create table student (name varchar(20),age int)”);
+Stmt.executeUpdate(“insert into student values(“Rama”,03);
+Stmt.executeUpdate(“insert into student values(“sitha”,02);
+Stmt.executeUpdate(“update student set name=’Siri’ where age=02”);
+Stmt.executeUpdate(“delete from student where age=03”);
+ResultSet rs= Stmt.executeQuery(“select * from student”);
+While(rs.next()) {
+System.out.println(rs.getString(1)+” “+rs.getInt(2));
+}
+Rs.close();
+Stmt.close();
+Con.close();
+}
+}
+Experiment-2
+===========
+Package harini;
+Import java.sql.*;
+Public class Jdbc
+Public static void main(String [] args) throws Exception
+{
+Class.forName(“Oracle.jdbc.driver.OracleDriver”);
+Connection con=DriverManager.getConnection(“jdbc:oracle:thin:@localhost:1521:XE”,”system”,”tec);
+Statement stmt=con.createStatement();
+Stmt.executeUpdate(“Create table A (rollnumber int primary key,name varchar(20),address varchar(30))”);
+PreparedStatement ps=con.prepareStatement(“insert into A values(?,?,?)”);
+Ps.setInt(1,005);
+Ps.setString(2,”Rama”);
+Ps.setString(3,”HYD”);
+Ps.executeUpdate();
+Ps.setInt(1,006);
+Ps.setString(2,”Lucky”);
+Ps.setString(3,”AP”);
+Ps.executeUpdate();
+System.out.println(“2 rows inserted”);
+PreparedStatement p=con.prepareStatement(“delete A set where Rollno=?”);
+P.setInt(1,006);
+p.executeUpdate();
+Con.close();
+Rs.close();
+Ps.close()
+p.close();
+}
+}
+
+exp-3
+========
+sql
+=====
+Create table student1258(rollno int,name varchar(30),age int);
+insert into student1258 values(1,'sravani',20);
+insert into student1258 values(2,'manju',19);
+insert into student1258 values(3,'harini',18);
+insert into student1258 values(4,'kowsalya',21);
+select * from student1258;
+commit;
+
+package operations;
+import java.sql.*;
+public class Rs{
+public static void main(String[] args)throws Exception{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection(
+  "jdbc:oracle:thin:@localhost:1521:XE","system","tec");
+Statement stmt=con.createStatement(ResultSet rs=stmt.executeQuery("select * Resultset.TYPE_SCROLL_INSENSITIVE,Resultset.CONCUR_READ_ONLY);
+ResultSet rs = stmt.executeQuery("select * from student1258");
+rs.first();
+System.out.println(rs.getInt("rollno")+" "+rs.getString("name")+" "+rs.getInt("age"));
+rs.last();
+System.out.println(rs.getInt("rollno")+" "+rs.getString("name")+" "+rs.getInt("age"));
+rs.absolute(3);
+System.out.println(rs.getInt("rollno")+" "+rs.getString("name")+" "+rs.getInt("age"));
+rs.previous();
+System.out.println(rs.getInt("rollno")+" "+rs.getString("name")+" "+rs.getInt("age"));
+rs.next();
+System.out.println(rs.getInt("rollno")+" "+rs.getString("name")+" "+rs.getInt("age"));
+rs.close();
+stmt.close();
+con.close();
+}
+
+exp-4
+========
+package operations;
+import java.sql.*;
+public class Sravani {
+
+public static void main(String[] args)throws Exception {
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con = DriverManager.getConnection(
+ 	"jdbc:oracle:thin:@localhost:1521:XE","system","tec");
+Con.SetAutoCommit(false);
+Statement stmt=con.createStatement(
+ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+ResultSet rs=stmt.executeQuery("select age from student1258");
+rs.absolute(1);
+int newage = rs.getInt("age")+1;
+rs.updateInt("age", newage);
+rs.updateRow();
+System.out.println(newage);
+rs.close();
+stmt.close();
+con.close();
+con.commit();
+con.close();
+} 
+}
+
+ecp-5
+======
+Package ITA;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpSevlet;
+import javax.servlet.http.HttpServletRequest;
+import java.servlet.http.HttpServletResponse;
+public class Ita58 extends HttpServlet
+{
+private Static final long serialVersionUID=IL;
+Protected void doGet(HttpServletRequest request,
+HttpServletresponse response)throws servletException,IOException{
+Printwriter writer=response.getWriter();
+writer.println("III/IT-A Students are good");
+}
+}
+web.xml
+ <?xml version = "1.0" encoding="UTF-8"?>
+< web-app xmlns:xsi="https://www.w3.org/2001/xMLSchema-instance"xmlns="https://java.sun.com/xml/ns/javace"xsi:schema location="http:||java.sun.com>
+<display-name>it servlet</display-name>
+<servlet>
+<servlet-name>ita58</servlet-name>
+<servlet-class>ita.ita58</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ita58</servlet-name>
+<url-pattern>/sravani</url-pattern>
+</servlet-mapping>
+</web-app>
+
+exp-6
+======
+Package se;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSevlet;
+import javax.servlet.http.HttpServletRequest;
+import java.servlet.http.HttpServletResponse;
+public class rama extends HttpServlet
+{
+private Static final long serialVersionUID=IL;
+Protected void doGet(HttpServletRequest request,
+HttpServletresponse response)throws servletException,IOException{
+Printwriter out=response.getWriter();
+out.println("i am rama");
+RequestDispatcher d=request.getRequestDispatcher("/Pudhi");
+d.include(request,response);
+}
+}
+         Sita.Java
+Package se;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletExcepion;
+import javax.servlet.http.HttpSevlet;
+import javax.servlet.http.HttpServletRequest;
+import java.servlet.http.HttpServletResponse;
+public class sita extends HttpServlet
+{
+private Static final long serialVersionUID=IL;
+Protected void doGet(HttpServletRequest request,
+HttpServletresponse response)throws servletException,IOException{
+Printwriter out=response.getWriter();
+out.println("i am sita");
+}
+}
+                  Web.xml
+
+<?xml version = "1.0" encoding="UTF-8"?>
+< web-app xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"xmlns="https://java.sun.com/xml/ns/javace"xsi:schema location="http:||java.sun.com/Xnl/ns/javaee http://java.sun.com/xml/ns/javaee/web_app_3_0.xsd"id="webApp_ID"version="3.0">>
+<display-name>tecsec</display-name>
+<servlet>
+<servlet-name>rama</servlet-name>
+<servlet-class>sec.rama</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>rama</servlet-name>
+<url-pattern>/sravani</url-pattern>
+</servlet-mapping>
+</web-app>
+<servlet>
+<servlet-name>sita</servlet-name>
+<servlet-class>sec.sita</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>sita</servlet-name>
+<url-pattern>/pudhi</url-pattern>
+</servlet-mapping>
+</web-app>
+
+exp-7
+=====
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Simple jsp</title>
+</head>
+<body>
+<%= 10+20 %>
+<p> <%="hello jsp".toUpperCase() %></p>
+<p> <%="lakshmi".length() %></p>
+<p> <%=7*8 %></p>
+<p> <%=(15>25)?15:15 %></p>/po0l-/
+<p> <%="java servlets".toLowerCase() %></p>
+</body>
+</html>
+
+exp-8
+======
+		cmd
+create table users(id int ,name varchar(20),mobileno int);
+insert into users values(1258,'sravani',8341715211);
+insert into users values(1267,'manju',2637281711);
+insert into users values(1246,'harini',67235815211);
+select * from users;
+commit;
+program
+=======
+<%@ page import ="java.sql.*" %>
+<html>
+<head>
+<title>database access through jsp</title>
+</head>
+<body>
+<h2>Users from Database</h2>
+<%
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","tec");
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("select * from users");
+while(rs.next())
+{
+out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getLong(3)+ "<br>");
+}
+rs.close();
+stmt.close();
+con.close();
+%>
+</body>
+</html>
+
+exp-10
+=====
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<html>
+<head>
+</head>
+<body>
+<sql:setDataSource var="db"
+driver 	 = "oracle.jdbc.driver.OracleDriver"
+url 	 ="jdbc:oracle:thin:@localhost:1521:XE"
+user	 ="system"
+password ="tec"
+/>
+<sql:query var="queryresult" dataSource="${db}">
+select * from college1
+</sql:query>
+<c:forEach var="attributeresult" items="${queryresult.rows}"><br>
+${attributeresult.name} ${attributeresult.address} ${attributeresult.code}
+</c:forEach>
+</body>
+</html>
+
+exp-11
+======
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Format tags</title>
+</head>
+<body>
+<c:set var="price" value="12345.678" />
+<p>${price}</p><br>
+<fmt:formatNumber value="${price}" /><br>
+<c:set var="date" value="<%=new java.util.Date() %>" />
+<p>${date}</p><br>
+<fmt:formatDate value="${date}"/><br>
+<c:set var="time" value="<%=new java.util.Date() %>" /><br>
+<fmt:formatDate value="${time}" pattern="hh:mm:ss" />
+</body>
+</html>
+
+exp-12
+======
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fn" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Function tags</title>
+</head>
+<body>
+<c:set var="a" value="welcome to jsp strings" />
+<p>'${a}'</p>
+<p>${fn:length(a)}</p>
+<p>${fn:toUpperCase(a)}</p>
+<p>${fn.toLowerCase(a)}</p>
+<p>${fn.contains(a,'jsp')}</p>
+<p>${fn.indexOf(a,'jsp)}</p>
+<p>'${fn.trim(a)}'</p>
+</body>
+</html>
+
+exp-13
+======
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<html>
+<head>
+</head>
+<body>
+<sql:setDataSource var="db"
+driver 	 = "oracle.jdbc.driver.OracleDriver"
+url 	 ="jdbc:oracle:thin:@localhost:1521:XE"
+user	 ="system"
+password ="tec"
+/>
+<sql:query var="queryresult" dataSource="${db}">
+select * from college1
+</sql:query>
+<c:forEach var="attributeresult" items="${queryresult.rows}"><br>
+${attributeresult.name} ${attributeresult.address} ${attributeresult.code}
+</c:forEach>
+</body>
+</html>
+
+exp-14
+=====
+studentModel.java
+================
+package it;
+
+public class StudentModel1 
+{
+	public String name;
+	public int age;
+	public StudentModel1(String n,int a)
+	{
+		name=n;
+		age=a;
+	}
+}
+
+studentController.java
+=======================
+package it;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+@RestController
+public class StudentController 
+{
+@GetMapping("/rama")
+public StudentModel1 a()
+{
+StudentModel1 s1=new StudentModel1("sita",20);
+return s1;
+}
+}
+
+application.properties
+========================
+spring.application.name=SPRINGMVC
+server.port=5555
+
+Spring mvc application test java
+==================================
+package it;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+@SpringBootApplication
+public class SpringmvcApplication {
+public static void main(String[] args) {
+SpringApplication.run(SpringmvcApplication.class, args);
+}
+}
+
+
