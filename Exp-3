@@ -1,0 +1,32 @@
+sql
+=====
+Create table student1258(rollno int,name varchar(30),age int);
+insert into student1258 values(1,'sravani',20);
+insert into student1258 values(2,'manju',19);
+insert into student1258 values(3,'harini',18);
+insert into student1258 values(4,'kowsalya',21);
+select * from student1258;
+commit;
+package operations;
+import java.sql.*;
+public class Sravani{
+public static void main(String[] args)throws Exception{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection(
+  "jdbc:oracle:thin:@localhost:1521:XE","system","tec");
+Statement stmt=con.createStatement(ResultSet rs=stmt.executeQuery("select * Resultset.TYPE_SCROLL_INSENSITIVE,Resultset.CONCUR_READ_ONLY);
+ResultSet rs = stmt.executeQuery("select * from student1258");
+rs.first();
+System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+rs.last();
+System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+rs.absolute(3);
+System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+rs.previous();
+System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+rs.next();
+System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+rs.close();
+stmt.close();
+con.close();
+}
