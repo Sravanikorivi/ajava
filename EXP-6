@@ -1,0 +1,58 @@
+Package se;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSevlet;
+import javax.servlet.http.HttpServletRequest;
+import java.servlet.http.HttpServletResponse;
+public class rama extends HttpServlet
+{
+private Static final long serialVersionUID=IL;
+Protected void doGet(HttpServletRequest request,
+HttpServletresponse response)throws servletException,IOException{
+Printwriter out=response.getWriter();
+out.println("i am rama");
+RequestDispatcher d=request.getRequestDispatcher("/Pudhi");
+d.include(request,response);
+}
+}
+         Sita.Java
+Package se;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletExcepion;
+import javax.servlet.http.HttpSevlet;
+import javax.servlet.http.HttpServletRequest;
+import java.servlet.http.HttpServletResponse;
+public class sita extends HttpServlet
+{
+private Static final long serialVersionUID=IL;
+Protected void doGet(HttpServletRequest request,
+HttpServletresponse response)throws servletException,IOException{
+Printwriter out=response.getWriter();
+out.println("i am sita");
+}
+}
+                  Web.xml
+
+<?xml version = "1.0" encoding="UTF-8"?>
+< web-app xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"xmlns="https://java.sun.com/xml/ns/javace"xsi:schema location="http:||java.sun.com/Xnl/ns/javaee http://java.sun.com/xml/ns/javaee/web_app_3_0.xsd"id="webApp_ID"version="3.0">>
+<display-name>tecsec</display-name>
+<servlet>
+<servlet-name>rama</servlet-name>
+<servlet-class>sec.rama</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>rama</servlet-name>
+<url-pattern>/sravani</url-pattern>
+</servlet-mapping>
+</web-app>
+<servlet>
+<servlet-name>sita</servlet-name>
+<servlet-class>sec.sita</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>sita</servlet-name>
+<url-pattern>/pudhi</url-pattern>
+</servlet-mapping>
+</web-app>
