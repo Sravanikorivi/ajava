@@ -1,0 +1,28 @@
+Package harini;
+Import java.sql.*;
+Public class Jdbc
+Public static void main(String [] args) throws Exception
+{
+Class.forName(“Oracle.jdbc.driver.OracleDriver”);
+Connection con=DriverManager.getConnection(“jdbc:oracle:thin:@localhost:1521:XE”,”system”,”tec);
+Statement stmt=con.createStatement();
+Stmt.executeUpdate(“Create table A (rollnumber int primary key,name varchar(20),address varchar(30))”);
+PreparedStatement ps=con.prepareStatement(“insert into A values(?,?,?)”);
+Ps.setInt(1,005);
+Ps.setString(2,”Rama”);
+Ps.setString(3,”HYD”);
+Ps.executeUpdate();
+Ps.setInt(1,006);
+Ps.setString(2,”Lucky”);
+Ps.setString(3,”AP”);
+Ps.executeUpdate();
+System.out.println(“2 rows inserted”);
+PreparedStatement p=con.prepareStatement(“delete A set where Rollno=?”);
+P.setInt(1,006);
+p.executeUpdate();
+Con.close();
+Rs.close();
+Ps.close()
+p.close();
+}
+}
