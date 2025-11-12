@@ -1,0 +1,26 @@
+<%@ page language = "java" contentType="text/html;
+		charset=UTF-8"page Encoding="UTF - 8"%>
+<! DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF - 8">
+<title> Add Two Numbers</title>
+</head>
+<body>
+<from action = "add.jsp"method="get">
+num1<input type="number"name="num1"><br></br>
+num2<input type="number"name="num2"><br></br>
+<input type = "submit" value = "Add">
+</f or m>
+<%
+String num1str=request.getparameter("num1");
+String num2str=request.getparameter("num2");
+if(num1str != null && num2str != null){
+int num1 = Integer.Parseint(num1str);
+int num2 = Integer.Parseint(num2str);
+int sum = num1+num2;
+out.println(sum);
+}
+%>
+</body>
+</html>
