@@ -1,0 +1,30 @@
+Package ITA;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpSevlet;
+import javax.servlet.http.HttpServletRequest;
+import java.servlet.http.HttpServletResponse;
+public class Ita58 extends HttpServlet
+{
+private Static final long serialVersionUID=IL;
+Protected void doGet(HttpServletRequest request,
+HttpServletresponse response)throws servletException,IOException{
+Printwriter writer=response.getWriter();
+writer.println("III/IT-A Students are good");
+}
+}
+web.xml
+ <?xml version = "1.0" encoding="UTF-8"?>
+< web-app xmlns:xsi="https://www.w3.org/2001/xMLSchema-instance"xmlns="https://java.sun.com/xml/ns/javace"xsi:schema location="http:||java.sun.com>
+<display-name>it servlet</display-name>
+<servlet>
+<servlet-name>ita58</servlet-name>
+<servlet-class>ita.ita58</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ita58</servlet-name>
+<url-pattern>/sravani</url-pattern>
+</servlet-mapping>
+</web-app>
+
