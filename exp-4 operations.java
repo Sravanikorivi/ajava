@@ -6,6 +6,7 @@ public class Sravani {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection con = DriverManager.getConnection(
 				"jdbc:oracle:thin:@localhost:1521:XE","system","tec");
+		Con.SetAutoCommit(false);
 		Statement stmt=con.createStatement(
 				ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
 		ResultSet rs=stmt.executeQuery("select age from student1258");
@@ -17,7 +18,10 @@ public class Sravani {
 		rs.close();
 		stmt.close();
 		con.close();
+		con.commit();
+		con.close();
 				
 	} 
 
 }
+
