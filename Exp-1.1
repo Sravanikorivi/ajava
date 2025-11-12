@@ -1,0 +1,26 @@
+Package lakshmi;
+inport java.sql.*;
+public class sitha
+{
+public static void main(string args[])throws exception
+{
+class forName("oracle.jdbc driver Oracle Driver");
+connection con=Driver.Manager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","tec");
+Statement stmt=con.create statement();
+stmt.executeupdate("Create table sravani(name varchar(20),age int)");
+stmt.executeupdate("insert table into sravani values('lakshmai',3)");
+stmt.executeupdate("insert table into sravani values('sita',1)");
+stmt.executeupdate("insert table into sravani values('laxman',7)");
+stmt.executeupdate("insert into update sravani set name = 'Hanuman' where age=7");
+stmt.executeupdate("Delete from sravani where  age = 3");
+esultset rs = stmt.ExecuteQuery("select * from Sravani");
+while(rs next())
+{
+System.out.println(rs.getString(1)+" "+rs.get(Int(2));
+}
+System.out.println("Table is Created");
+rs.close();
+stmt.close();
+con.close();      //sita 1
+}                          //Hanuman 7
+}
