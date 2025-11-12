@@ -7,9 +7,10 @@ insert into student1258 values(3,'harini',18);
 insert into student1258 values(4,'kowsalya',21);
 select * from student1258;
 commit;
+
 package operations;
 import java.sql.*;
-public class Sravani{
+public class Rs{
 public static void main(String[] args)throws Exception{
 Class.forName("oracle.jdbc.driver.OracleDriver");
 Connection con=DriverManager.getConnection(
@@ -17,15 +18,15 @@ Connection con=DriverManager.getConnection(
 Statement stmt=con.createStatement(ResultSet rs=stmt.executeQuery("select * Resultset.TYPE_SCROLL_INSENSITIVE,Resultset.CONCUR_READ_ONLY);
 ResultSet rs = stmt.executeQuery("select * from student1258");
 rs.first();
-System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+System.out.println(rs.getInt("rollno")+" "+rs.getString("name")+" "+rs.getInt("age"));
 rs.last();
-System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+System.out.println(rs.getInt("rollno")+" "+rs.getString("name")+" "+rs.getInt("age"));
 rs.absolute(3);
-System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+System.out.println(rs.getInt("rollno")+" "+rs.getString("name")+" "+rs.getInt("age"));
 rs.previous();
-System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+System.out.println(rs.getInt("rollno")+" "+rs.getString("name")+" "+rs.getInt("age"));
 rs.next();
-System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+System.out.println(rs.getInt("rollno")+" "+rs.getString("name")+" "+rs.getInt("age"));
 rs.close();
 stmt.close();
 con.close();
